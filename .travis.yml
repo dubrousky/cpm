@@ -8,10 +8,7 @@ before_install:
   - sudo add-apt-repository ppa:ubuntu-sdk-team/ppa -y
   - sudo apt-get update
   - sudo apt-get install cmake
+  - sudo apt-get install openssh-client
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 script: "./tests/run-tests.sh"
-branches:
-  only:
-    - master
-    - dev
